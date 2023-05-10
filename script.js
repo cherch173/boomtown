@@ -3,15 +3,16 @@
 
 // CONSTANTS //
 
-const DELAY = 20
+const SPEED = 5
 const XMAX = 638
-const YMAX = 395
+const YMAX = 410
 const XMIN = 17.3
-const YMIN = 17.3
-const PXMOVE = 2
+const YMIN = 30
+const PXMOVE = 1
 
 // STATE //
 
+// Interval //
 let rightInterval
 let leftInterval
 let upInterval
@@ -44,7 +45,7 @@ const movePuckDown = () => {
   let y = puck.getBoundingClientRect().top;
   if (y > YMAX) {
     clearInterval(downInterval);
-    upInterval = setInterval(movePuckUp, DELAY)
+    upInterval = setInterval(movePuckUp, SPEED)
   }
   puck.style.top = `${y + PXMOVE}px`;
 }
@@ -53,7 +54,7 @@ const movePuckUp = () => {
   let y = puck.getBoundingClientRect().top;
   if (y < YMIN) {
     clearInterval(upInterval);
-    downInterval = setInterval(movePuckDown, DELAY)
+    downInterval = setInterval(movePuckDown, SPEED)
   }
   puck.style.top = `${y - PXMOVE}px`;
 }
@@ -62,7 +63,7 @@ const movePuckLeft = () => {
   let x = puck.getBoundingClientRect().left;
   if (x < XMIN) {
     clearInterval(leftInterval)
-    rightInterval = setInterval(movePuckRight, DELAY);
+    rightInterval = setInterval(movePuckRight, SPEED);
   }
   puck.style.left = `${x - PXMOVE}px`;
 }
@@ -71,7 +72,7 @@ const movePuckRight = () => {
   let x = puck.getBoundingClientRect().left;
   if (x > XMAX) {
     clearInterval(rightInterval)
-    leftInterval = setInterval(movePuckLeft, DELAY);
+    leftInterval = setInterval(movePuckLeft, SPEED);
   }
   puck.style.left = `${x + PXMOVE}px`;
 }
@@ -84,22 +85,20 @@ const puckMotion = () => {
     if (leftInterval) {
       clearInterval(leftInterval)
     }
-    rightInterval = setInterval(movePuckRight, DELAY);
+    rightInterval = setInterval(movePuckRight, SPEED);
   }
 
   if (y < YMIN) {
     if (upInterval) {
       clearInterval(upInterval)
     }
-    downInterval = setInterval(movePuckDown, DELAY);
+    downInterval = setInterval(movePuckDown, SPEED);
   }
 }
 
-// puckMotion();
 const startGame = () => {
-  rightInterval = setInterval(movePuckRight, DELAY);
-  downInterval = setInterval(movePuckDown, DELAY);
+  rightInterval = setInterval(movePuckRight, SPEED);
+  downInterval = setInterval(movePuckDown, SPEED);
   document.addEventListener("mousemove", moveStick);
-  // puckMotion();
 }
 startButton.addEventListener("click", startGame);
