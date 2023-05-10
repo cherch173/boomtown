@@ -2,6 +2,7 @@ body {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    background-color: rgb(43, 45, 45);
   }
   
   .stick {
@@ -20,6 +21,8 @@ body {
     border-radius: 50%;
     background: chartreuse;
     border: 1px solid forestgreen;
+    top: 210px;
+    left: 333px;
   }
   
   .ice {
@@ -28,9 +31,18 @@ body {
     height: 420px;
     border: 8px double crimson;
     border-radius: 10%;
+    background-color: whitesmoke;
+  }
+
+  h1 {
+    font-size: 42px;
+    color: rgba(220, 20, 60, .86);
+    text-shadow: -1px 1px whitesmoke, -2px 2px black;
   }
   
   #start {
+    background-color: crimson;
+    color: whitesmoke;
     justify-content: center;
     width: 10%
   }
