@@ -18,6 +18,11 @@ let leftInterval
 let upInterval
 let downInterval
 
+// Joystick //
+let stickX = 0
+let stickY = 0
+let stickSpeed
+
 // CACHED ELEMENTS //
 
 const stick = document.querySelector(".stick");
@@ -31,12 +36,43 @@ console.log(contRect)
 
 // EVENT LISTENERS //
 
-const moveStick = (event) => {
-  let x = event.clientX;
-  let y = event.clientY;
-  stick.style.left = `${x - 20}px`;
-  stick.style.top = `${y - 20}px`;
-}
+//// MY ATTEMPT ////
+
+// const moveStick = (event) => {
+  // if (event.keyCode === 37) {
+  //   // move stick to the left using LEFT ARROW
+  //   if (stickX < XMIN) {
+  //     stickX -= stickSpeed;
+  //     console.log(stickX);
+  //     stick.style.left = stickX + 'px';
+  //   }
+  // } else if (event.keyCode === 39) {
+  //   // move stick to the right using RIGHT ARROW
+  //   if (stickX > XMAX) {
+  //     stickX += stickSpeed;
+  //     console.log(stickX)
+  //     stick.style.left = stickX + 'px';
+  //   }
+  // } else if (event.keyCode === 38) {
+  //   if (stickY < YMIN) {
+  //     stickY -= stickSpeed;
+  //     console.log(stickY)
+  //     stick.style.top = stickY + 'px';
+  //   }
+  // } else if (event.keyCode === 40) {
+  //   if (stickY > YMAX) {
+  //     stickY += stickSpeed;
+  //     console.log(stickY);
+  //     stick.style.top = stickY + 'px';
+  //   }
+  // }
+
+  const moveStick = (event) => {
+    let x = event.clientX;
+    let y = event.clientY;
+    stick.style.left = `${x - 20}px`;
+    stick.style.top = `${y - 20}px`;
+  }
 
 // FUNCTIONS //
 
@@ -99,7 +135,7 @@ const puckMotion = () => {
 // COLLISION DETECTION //
 
 function checkCollision() {
-  
+
 }
 
 
