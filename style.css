@@ -45,6 +45,15 @@ body {
     left: 680px;
     top: 150px;
   }
+  .goal2 {
+    position: absolute;
+    width: 25px;
+    height: 200px;
+    background-color: grey;
+    border: 2px double black;
+    left: 5px;
+    top: 150px;
+  }
 
   h1 {
     font-size: 42px;
