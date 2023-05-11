@@ -96,7 +96,10 @@ const movePuckUp = () => {
 const movePuckLeft = () => {
   clearInterval(rightInterval)
   let x = puck.getBoundingClientRect().left;
-  if (x < XMIN) {
+  if (x < XMIN || stick.style.top > x < stick.style.right || stick.style.right > x > stick.style.bottom || stick.style.left === puck.style.right
+    //if TOP LEFT portion of PUCK is GREATER THAN the BOTTOM RIGHT of STICK and LESS THAN the TOP RIGHT of the STICK that is a COLLISION
+    //...OR if the BOTTOM LEFT of the PUCK is LESS THAN the TOP RIGHT of the STICK **AND** its GREATER THAN the STICK that is the CONDITION NEEDED to MOVE LEFT
+    ) {
     clearInterval(leftInterval)
     rightInterval = setInterval(movePuckRight, speed);
   }

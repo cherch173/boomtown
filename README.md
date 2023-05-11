@@ -29,11 +29,15 @@ Ok.
 
 This is what dreams are made of...
 
-Locked up after a brutal overtime we find ourselves at the end of the Shootout tied 4-4.
+Deadlocked after a brutal overtime against the THREE RIVERS LAKERS we find ourselves at the tail end of the Shootout up 4-3.
 
-It's all come down to you, Boomtown.
+It's all come down to you, **Boomtown**. You're the best Tendy in the league.
 
-**The _last_ shot**.
+The name of the game is defense.
+
+Jean Jacques François Jacques Jean (better known as "JJ Frankie JJ") has **the _last_ shot**.
+
+Can you stop him? 
 
 Can you get me that **W**???
 
@@ -76,13 +80,15 @@ We'll combine Collision Detection and Change Direction functions to emulate a st
 
 To begin select the FACE OFF Button which will drop the puck.
 
-The game will initialize and Player1 (The Blue Circle)'s controller will become active and can be used via the Mouse
+The game will initialize and Player1 (The Blue Circle)'s controller will become active and can be used via the Mouse.
+
+You play the GOALIE so it's your job to STOP THE PUCK from entering the NET.
 
 The puck will move upon contact and bounce of the parameters of the grid I build out of Divs and simply change the border style and color to emulate boards.
 
-The 2.0 version of the game will run for a facsimile period elapsing when one player **scores 5 goals**. Aka first to 5 goals = winner, winner chicken dinner...
-
 The MVP version will showcase the Puck DIV disappearing if it enters the GOAL DIV.
+
+The 2.0 version of the game will run for a facsimile period elapsing when one player **scores 5 goals**. Aka first to 5 goals = winner, winner chicken dinner...
 
 To PLAY AGAIN simply just click the FACE OFF Button which will reset the game.
 
