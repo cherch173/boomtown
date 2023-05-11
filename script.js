@@ -30,11 +30,10 @@ const stick = document.querySelector(".stick");
 const puck = document.querySelector(".puck");
 const startButton = document.querySelector("#start");
 const ice = document.querySelector(".ice");
-let contRect = ice.getBoundingClientRect();
-let stickRect = stick.getBoundingClientRect();
-let puckRect = puck.getBoundingClientRect();
-console.log(contRect)
-
+// let contRect = ice.getBoundingClientRect();
+// let stickRect = stick.getBoundingClientRect();
+// let puckRect = puck.getBoundingClientRect();
+// console.log(puckRect)
 
 
 // EVENT LISTENERS //
@@ -105,14 +104,12 @@ const movePuckLeft = () => {
 const movePuckRight = () => {
   clearInterval(leftInterval)
   let x = puck.getBoundingClientRect().left;
-  if (x > XMAX || (puckRect.top + puckRect.height >= stickRect.top &&
-  stick.left + puckRect.width >= stickRect.left &&
-  puckRect.right - puckRect.width <= stickRect.right)) {
+  if (x > XMAX) {
     clearInterval(rightInterval)
     leftInterval = setInterval(movePuckLeft, speed);
   }
   puck.style.left = `${x + pxMOVE}px`;
-collisionDetection(stickRect, puckRect);
+// collisionDetection(puckRect);
 }
 
 const puckMotion = () => {
@@ -136,12 +133,12 @@ const puckMotion = () => {
 
 
 // ALO'S A GENIUS
-if ((puckRect.top + puckRect.height >= stickRect.top &&
-  stick.left + puckRect.width >= stickRect.left &&
-  puckRect.right - puckRect.width <= stickRect.right)) {
-    clearInterval(rightInterval)
-    leftInterval = setInterval(movePuckLeft, speed);
-  }
+// if ((puckRect.top + puckRect.height >= stickRect.top &&
+//   stick.left + puckRect.width >= stickRect.left &&
+//   puckRect.right - puckRect.width <= stickRect.right)) {
+//     clearInterval(rightInterval)
+//     leftInterval = setInterval(movePuckLeft, speed);
+//   }
   
   
   // COLLISION DETECTION //
@@ -152,15 +149,12 @@ function collisionDetection(stick, puck) {
   console.log(collisionDetection);
 
     // return (stick.right) >= puck && (puckLeft.left) >= stick;
-    console.log(puckRect.top + puckRect.height) 
-    console.log('s', stickRect.top)
 }
 
 // console.log('collisionDetection(stick, puckLeft)', collisionDetection(stickRight, puckLeft))
 // console.log('collisionDetection(ice, puck)', collisionDetection(ice, puck))
 
 // CHANGE DIRECTION after COLLISION v1 //
-
 
 // CHANGE DIRECTION after COLLISION v2 //
 
