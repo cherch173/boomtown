@@ -6,7 +6,7 @@
 
 
 #### Written by: Brian Cherchiglia
-#### Published by: Arcadia Games
+#### Published by: Cherch Games
 ##### Created on 05/04/2023
 ***
 ***
@@ -22,8 +22,23 @@
 ##### Scholtzy.
 #### Fisky.
 ### BOOMTOWN
-***
 
+#### 
+***
+Ok.
+
+This is what dreams are made of...
+
+Tied after overtime we find ourselves at the end of the Shootout tied 4-4.
+
+It's come down to you, Boomtown.
+
+The **_last_ shot**.
+
+Can you get me that W, boys?
+
+***
+***
 #### _**CONCEPT**_
 
 The idea is to create a simple marriage of AIR HOCKEY, PONG, and PENALTY SHOOUTOUTS into a browser-based game.
@@ -67,13 +82,13 @@ The 2.0 version of the game will run for a facsimile period elapsing when one pl
 
 The MVP version will showcase the Puck DIV disappearing if it enters the GOAL DIV.
 
-To PlAY AGAIN simply just click the FACE OFF Button which will reset the game.
+To PLAY AGAIN simply just click the FACE OFF Button which will reset the game.
 
 ***
 ***
 
 ### **WIREFRAME**
-To effectively build this we'll be utilizing DIVS and SPANS to create shapes and the assigning them Classes and IDs to assign them different property values.
+To effectively build this we'll be utilizing DIVS and and their GRID COORDNATES to create shapes and the assigning them Classes and IDs to assign them different property values.
 
 ![Image](https://github.com/cherch173/arcadia/blob/main/wireframe_boomtown.png?raw=true)
 
@@ -90,8 +105,7 @@ To effectively build this we'll be utilizing DIVS and SPANS to create shapes and
     - Refine ReadME as concept improves
 - School Week 
     - Functionality (JS)
-    - Improve Skeleton (HTML)
-    - Aesthetics (CSS)
+    - Tweak Aesthetics (CSS)
 - Final Stretch
     - Build **LANDING PAGE** and link it to GAME PAGE
     - Test Code on different browsers
@@ -103,7 +117,7 @@ To effectively build this we'll be utilizing DIVS and SPANS to create shapes and
 
 ### _**Task Lists**_
 - [x] Make an adorable README.md
-- [X] Complete **RINK** using HTML & CSS
+- [X] Complete **ICE** using HTML & CSS
 - [X] Complete **STICK** using HTML & CSS
 - [X] Complete **PUCK** using HTML & CSS
 - [X] Compose Gameplay using JAVASCRIPT pt1
