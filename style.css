@@ -12,6 +12,7 @@ body {
     /* border-radius: 50%; */
     background: dodgerblue;
     border: 2px double navy;
+    top: 210px;
   }
   
   .puck {
@@ -21,7 +22,7 @@ body {
     /* border-radius: 50%; */
     background: chartreuse;
     border: 1px solid forestgreen;
-    top: 210px;
+    top: 225px;
     left: 333px;
   }
   
@@ -33,6 +34,16 @@ body {
     border-radius: 10%;
     background-color: whitesmoke;
     margin-bottom: -20px;
+  }
+
+  .goal {
+    position: absolute;
+    width: 25px;
+    height: 200px;
+    background-color: grey;
+    border: 2px double black;
+    left: 680px;
+    top: 173px;
   }
 
   h1 {

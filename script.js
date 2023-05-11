@@ -162,7 +162,7 @@ const puckMotion = () => {
 const stickRight = stick.getBoundingClientRect().right;
 const puckLeft = puck.getBoundingClientRect().left;
 
-function isBoomtown(stick, puck) {
+function isBoomtown(stickRight, puckLeft) {
   return (stickRight + stick.clientWidth) >= puckLeft && (puckLeft + puck.clientWidth) >= stickRight;
 }
 
@@ -174,8 +174,6 @@ console.log('isBoomtown(ice, puck)', isBoomtown(ice, puck))
 
 const boomtown = () => {
   clearInterval(leftInterval)
-  let stickRight = stick.getBoundingClientRect().right;
-  let puckLeft = puck.getBoundingClientRect().left;
   if (puckLeft > stickRight) {
     clearInterval(rightInterval)
     leftInterval = setInterval(puck, speed);
