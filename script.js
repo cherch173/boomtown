@@ -31,42 +31,13 @@ const puck = document.querySelector(".puck");
 const startButton = document.querySelector("#start");
 const ice = document.querySelector(".ice");
 let contRect = ice.getBoundingClientRect();
-let padRect = stick.getBoundingClientRect();
+let stickRect = stick.getBoundingClientRect();
+let puckRect = puck.getBoundingClientRect();
 console.log(contRect)
 
 
+
 // EVENT LISTENERS //
-
-//// D-PAD ATTEMPT ////
-
-// const moveStick = (key.event) => {
-  // if (event.keyCode === 37) {
-  //   // move stick to the left using LEFT ARROW
-  //   if (stickX < XMIN) {
-  //     stickX -= stickSpeed;
-  //     console.log(stickX);
-  //     stick.style.left = stickX + 'px';
-  //   }
-  // } else if (event.keyCode === 39) {
-  //   // move stick to the right using RIGHT ARROW
-  //   if (stickX > XMAX) {
-  //     stickX += stickSpeed;
-  //     console.log(stickX)
-  //     stick.style.left = stickX + 'px';
-  //   }
-  // } else if (event.keyCode === 38) {
-  //   if (stickY < YMIN) {
-  //     stickY -= stickSpeed;
-  //     console.log(stickY)
-  //     stick.style.top = stickY + 'px';
-  //   }
-  // } else if (event.keyCode === 40) {
-  //   if (stickY > YMAX) {
-  //     stickY += stickSpeed;
-  //     console.log(stickY);
-  //     stick.style.top = stickY + 'px';
-  //   }
-  // }
 
 // JOYSTICK MOTION plus ICE BORDER & CENTER ICE RECOGNITION //
 
@@ -75,26 +46,28 @@ console.log(contRect)
     let y = event.clientY;
     if (x < XMIN) {     // keeps stick within LEFT border of ICE
       x -= stickSpeed;
-      console.log(x);
+      // console.log(x);
       stick.style.left = x + 'px';
     }
     else if (y < YMIN) {
       y -= stickSpeed;    // keeps stick within TOP border of ICE
-      console.log(y);
+      // console.log(y);
       stick.style.top = y + 'px';
     } 
     else if (x > 322) {
       x += stickSpeed;     // keeps stick within CENTER ICE (to the right)
-      console.log(x);
+      // console.log(x);
       stick.style.left = x + 'px';
     }
     else if (y > 385) {
       y += stickSpeed;    // keeps stick within BOTTOM border of ICE
-      console.log(y);
+      // console.log(y);
       stick.style.top = y + 'px'
     }
     stick.style.left = `${x - 10}px`;
     stick.style.top = `${y - 10}px`;
+    stick.style.right = `${x - 10}px`;
+    console.log(stick.style.right);
   }
 
 // FUNCTIONS //
@@ -107,6 +80,7 @@ const movePuckDown = () => {
     upInterval = setInterval(movePuckUp, speed)
   }
   puck.style.top = `${y + pxMOVE}px`;
+  // console.log(puck.style.left)
 }
 
 const movePuckUp = () => {
@@ -131,11 +105,14 @@ const movePuckLeft = () => {
 const movePuckRight = () => {
   clearInterval(leftInterval)
   let x = puck.getBoundingClientRect().left;
-  if (x > XMAX) {
+  if (x > XMAX || (puckRect.top + puckRect.height >= stickRect.top &&
+  stick.left + puckRect.width >= stickRect.left &&
+  puckRect.right - puckRect.width <= stickRect.right)) {
     clearInterval(rightInterval)
     leftInterval = setInterval(movePuckLeft, speed);
   }
   puck.style.left = `${x + pxMOVE}px`;
+collisionDetection(stickRect, puckRect);
 }
 
 const puckMotion = () => {
@@ -157,39 +134,57 @@ const puckMotion = () => {
   }
 }
 
-// COLLISION DETECTION //
 
-const stickRight = stick.getBoundingClientRect().right;
-const puckLeft = puck.getBoundingClientRect().left;
+// ALO'S A GENIUS
+if ((puckRect.top + puckRect.height >= stickRect.top &&
+  stick.left + puckRect.width >= stickRect.left &&
+  puckRect.right - puckRect.width <= stickRect.right)) {
+    clearInterval(rightInterval)
+    leftInterval = setInterval(movePuckLeft, speed);
+  }
+  
+  
+  // COLLISION DETECTION //
+function collisionDetection(stick, puck) {
 
-function isBoomtown(stickRight, puckLeft) {
-  return (stickRight + stick.clientWidth) >= puckLeft && (puckLeft + puck.clientWidth) >= stickRight;
+    // return (stick.right) >= puck && (puckLeft.left) >= stick;
+    console.log('p', puckRect.top + puckRect.height) 
+    console.log('s', stickRect.top)
 }
 
-console.log('isBoomtown(stick, puckLeft)', isBoomtown(stickRight, puckLeft))
-console.log('isBoomtown(ice, puck)', isBoomtown(ice, puck))
+// console.log('collisionDetection(stick, puckLeft)', collisionDetection(stickRight, puckLeft))
+// console.log('collisionDetection(ice, puck)', collisionDetection(ice, puck))
 
 
 // CHANGE DIRECTION after COLLISION //
 
-const boomtown = () => {
-  clearInterval(leftInterval)
-  if (isBoomtown(puck) === true) {
-    clearInterval(rightInterval)
-    leftInterval = setInterval(puck, speed);
-  }
-  puck.style.left = `${x + pxMOVE}px`;
-  puckMotion();
-}
-
-
-// function checkCollision() {
-// let stickBoom = stick.getBoundingClientRect().right;
-// let puckBoom = puck.getBoundingClientRect().left;
-// let boom = (stickBoom === puckBoom)
-//   if (boom) {
-//     return puckMotion;
+// const changePuckDirection = (event) => {
+//   let x = event.clientX;
+//   let y = event.clientY;
+//   if (x < XMIN) {     // keeps stick within LEFT border of ICE
+//     x -= stickSpeed;
+//     // console.log(x);
+//     puck.style.left = x + 'px';
 //   }
+//   else if (y < YMIN) {
+//     y -= puckSpeed;    // keeps puck within TOP border of ICE
+//     // console.log(y);
+//     puck.style.top = y + 'px';
+//   } 
+//   else if (x > XMAX) {
+//     x += puckSpeed;     // keeps puck within CENTER ICE (to the right)
+//     // console.log(x);
+//     puck.style.left = x + 'px';
+//   }
+//   else if (y > YMAX) {
+//     y += puckSpeed;    // keeps puck within BOTTOM border of ICE
+//     // console.log(y);
+//     puck.style.top = y + 'px'
+//   }
+//   puck.style.left = `${x - 10}px`;
+//   puck.style.top = `${y - 10}px`;
+//   puck.style.right = `${x - 10}px`;
+//   console.log('puckRight', puck.style.right);
 // }
 
 
