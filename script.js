@@ -38,7 +38,7 @@ console.log(contRect)
 
 //// MY ATTEMPT ////
 
-// const moveStick = (event) => {
+// const moveStick = (key.event) => {
   // if (event.keyCode === 37) {
   //   // move stick to the left using LEFT ARROW
   //   if (stickX < XMIN) {
@@ -67,11 +67,33 @@ console.log(contRect)
   //   }
   // }
 
+// JOYSTICK MOTION plus ICE BORDER & CENTER ICE RECOGNITION //
+
   const moveStick = (event) => {
     let x = event.clientX;
     let y = event.clientY;
-    stick.style.left = `${x - 20}px`;
-    stick.style.top = `${y - 20}px`;
+    if (x < XMIN) {     // keeps stick within LEFT border of ICE
+      x -= stickSpeed;
+      console.log(x);
+      stick.style.left = x + 'px';
+    }
+    else if (y < YMIN) {
+      y -= stickSpeed;    // keeps stick within TOP border of ICE
+      console.log(y);
+      stick.style.top = y + 'px';
+    } 
+    else if (x > 322) {
+      x += stickSpeed;     // keeps stick within CENTER ICE (to the right)
+      console.log(x);
+      stick.style.left = x + 'px';
+    }
+    else if (y > 385) {
+      y += stickSpeed;    // keeps stick within BOTTOM border of ICE
+      console.log(y);
+      stick.style.top = y + 'px'
+    }
+    stick.style.left = `${x - 10}px`;
+    stick.style.top = `${y - 10}px`;
   }
 
 // FUNCTIONS //
