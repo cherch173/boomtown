@@ -146,17 +146,23 @@ if ((puckRect.top + puckRect.height >= stickRect.top &&
   
   // COLLISION DETECTION //
 function collisionDetection(stick, puck) {
+  if (puck.style.top + puck.style.height >= stick.style.top && stick.style.left + puck.style.width >= stick.style.left && puck.style.right - puck.style.width <= stick.style.right) {
+    return true;
+  }
+  console.log(collisionDetection);
 
     // return (stick.right) >= puck && (puckLeft.left) >= stick;
-    console.log('p', puckRect.top + puckRect.height) 
+    console.log(puckRect.top + puckRect.height) 
     console.log('s', stickRect.top)
 }
 
 // console.log('collisionDetection(stick, puckLeft)', collisionDetection(stickRight, puckLeft))
 // console.log('collisionDetection(ice, puck)', collisionDetection(ice, puck))
 
+// CHANGE DIRECTION after COLLISION v1 //
 
-// CHANGE DIRECTION after COLLISION //
+
+// CHANGE DIRECTION after COLLISION v2 //
 
 // const changePuckDirection = (event) => {
 //   let x = event.clientX;
