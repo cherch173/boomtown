@@ -174,7 +174,7 @@ console.log('isBoomtown(ice, puck)', isBoomtown(ice, puck))
 
 const boomtown = () => {
   clearInterval(leftInterval)
-  if (puckLeft > stickRight) {
+  if (isBoomtown(puck) === true) {
     clearInterval(rightInterval)
     leftInterval = setInterval(puck, speed);
   }

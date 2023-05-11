@@ -43,7 +43,7 @@ body {
     background-color: grey;
     border: 2px double black;
     left: 680px;
-    top: 173px;
+    top: 150px;
   }
 
   h1 {
@@ -63,5 +63,5 @@ body {
     background-color: firebrick;
     color: whitesmoke;
     justify-content: center;
-    width: 10%
+    width: 10%;
   }
