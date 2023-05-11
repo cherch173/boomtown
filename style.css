@@ -9,7 +9,7 @@ body {
     position: absolute;
     width: 100px;
     height: 100px;
-    border-radius: 50%;
+    /* border-radius: 50%; */
     background: dodgerblue;
     border: 2px double navy;
   }
@@ -18,7 +18,7 @@ body {
     position: absolute;
     width: 50px;
     height: 50px;
-    border-radius: 50%;
+    /* border-radius: 50%; */
     background: chartreuse;
     border: 1px solid forestgreen;
     top: 210px;

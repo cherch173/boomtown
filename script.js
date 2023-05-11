@@ -23,13 +23,14 @@ let stickX = 0
 let stickY = 0
 let stickSpeed
 
+
 // CACHED ELEMENTS //
 
 const stick = document.querySelector(".stick");
 const puck = document.querySelector(".puck");
 const startButton = document.querySelector("#start");
-const container = document.querySelector(".ice");
-let contRect = container.getBoundingClientRect();
+const ice = document.querySelector(".ice");
+let contRect = ice.getBoundingClientRect();
 let padRect = stick.getBoundingClientRect();
 console.log(contRect)
 
@@ -107,6 +108,7 @@ const movePuckDown = () => {
   }
   puck.style.top = `${y + PXMOVE}px`;
 }
+
 const movePuckUp = () => {
   clearInterval(downInterval);
   let y = puck.getBoundingClientRect().top;
@@ -125,6 +127,7 @@ const movePuckLeft = () => {
   }
   puck.style.left = `${x - PXMOVE}px`;
 }
+
 const movePuckRight = () => {
   clearInterval(leftInterval)
   let x = puck.getBoundingClientRect().left;
@@ -156,14 +159,39 @@ const puckMotion = () => {
 
 // COLLISION DETECTION //
 
-function checkCollision() {
-let boomH = stick.getBoundingClientRect().height;
-let boomW = stick.getBoundingClientRect().width;
-let boomTown = (boomH + boomW)
-  if (puckMotion.y === boomTown) {             /// If Stick Motion collides with puck move puck in OPPOSITE Y Axis Direction
-    puck.style.top = `${y - PXMOVE}px`;
-  }
+const stickRight = stick.getBoundingClientRect().right;
+const puckLeft = puck.getBoundingClientRect().left;
+
+function isBoomtown(stick, puck) {
+  return (stickRight + stick.clientWidth) >= puckLeft && (puckLeft + puck.clientWidth) >= stickRight;
 }
+
+console.log('isBoomtown(stick, puckLeft)', isBoomtown(stickRight, puckLeft))
+console.log('isBoomtown(ice, puck)', isBoomtown(ice, puck))
+
+
+// CHANGE DIRECTION after COLLISION //
+
+const boomtown = () => {
+  clearInterval(leftInterval)
+  let stickRight = stick.getBoundingClientRect().right;
+  let puckLeft = puck.getBoundingClientRect().left;
+  if (puckLeft > stickRight) {
+    clearInterval(rightInterval)
+    leftInterval = setInterval(puck, SPEED);
+  }
+  puck.style.left = `${x + PXMOVE}px`;
+}
+
+
+// function checkCollision() {
+// let stickBoom = stick.getBoundingClientRect().right;
+// let puckBoom = puck.getBoundingClientRect().left;
+// let boom = (stickBoom === puckBoom)
+//   if (boom) {
+//     return puckMotion;
+//   }
+// }
 
 
 
