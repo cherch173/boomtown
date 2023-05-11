@@ -36,7 +36,7 @@ console.log(contRect)
 
 // EVENT LISTENERS //
 
-//// MY ATTEMPT ////
+//// D-PAD ATTEMPT ////
 
 // const moveStick = (key.event) => {
   // if (event.keyCode === 37) {
@@ -157,7 +157,12 @@ const puckMotion = () => {
 // COLLISION DETECTION //
 
 function checkCollision() {
-
+let boomH = stick.getBoundingClientRect().height;
+let boomW = stick.getBoundingClientRect().width;
+let boomTown = (boomH + boomW)
+  if (puckMotion.y === boomTown) {             /// If Stick Motion collides with puck move puck in OPPOSITE Y Axis Direction
+    puck.style.top = `${y - PXMOVE}px`;
+  }
 }
 
 
