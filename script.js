@@ -179,6 +179,7 @@ const boomtown = () => {
     leftInterval = setInterval(puck, speed);
   }
   puck.style.left = `${x + pxMOVE}px`;
+  puckMotion();
 }
 
 

@@ -29,11 +29,11 @@ Ok.
 
 This is what dreams are made of...
 
-Tied after overtime we find ourselves at the end of the Shootout tied 4-4.
+Locked up after a brutal overtime we find ourselves at the end of the Shootout tied 4-4.
 
-It's come down to you, Boomtown.
+It's all come down to you, Boomtown.
 
-The **_last_ shot**.
+**The _last_ shot**.
 
 Can you get me that **W**???
 
