@@ -107,7 +107,11 @@ const movePuckLeft = () => {
 const movePuckRight = () => {
   clearInterval(leftInterval)
   let x = puck.getBoundingClientRect().left;
-  if (x > XMAX) {
+  if (x > XMAX || stick.style.right === puck.style.left
+    // if TOP LEFT portion of PUCK is LESS THAN the BOTTOM RIGHT of STICK and GREATER THAN the TOP RIGHT of the PADDLE that is a COLLISION
+    // ...OR if the BOTTOM LEFT of the PUCK is GREATER THAN the TOP RIGHT of the STICK **AND** its LESS THAN the STICK that is the CONDITION NEEDED to MOVE RIGHT
+    
+    ) {
     clearInterval(rightInterval)
     leftInterval = setInterval(movePuckLeft, speed);
   }
@@ -152,7 +156,8 @@ function collisionDetection(stick, puck) {
     // console.log('sR', stick.style.right)
     // console.log('pL', puck.style.left)
     console.log('collision')
-    }
+  } 
+  
     // if the PUCK LEFT = STICK RIGHT
 // 
 }
@@ -161,6 +166,7 @@ function collisionDetection(stick, puck) {
 // console.log('collisionDetection(ice, puck)', collisionDetection(ice, puck))
 
 // CHANGE DIRECTION after COLLISION v1 //
+
 
 // CHANGE DIRECTION after COLLISION v2 //
 
