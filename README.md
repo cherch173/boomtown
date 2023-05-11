@@ -35,7 +35,9 @@ It's come down to you, Boomtown.
 
 The **_last_ shot**.
 
-Can you get me that W, boys?
+Can you get me that **W**???
+
+_Need_ that **W**, boys!
 
 ***
 ***
