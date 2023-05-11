@@ -32,8 +32,8 @@ const startButton = document.querySelector("#start");
 const ice = document.querySelector(".ice");
 // let contRect = ice.getBoundingClientRect();
 // let stickRect = stick.getBoundingClientRect();
-// let puckRect = puck.getBoundingClientRect();
-// console.log(puckRect)
+let puckRect = puck.getBoundingClientRect();
+console.log(puckRect)
 
 
 // EVENT LISTENERS //
@@ -44,29 +44,29 @@ const ice = document.querySelector(".ice");
     let x = event.clientX;
     let y = event.clientY;
     if (x < XMIN) {     // keeps stick within LEFT border of ICE
-      x -= stickSpeed;
+      // x -= stickSpeed;
       // console.log(x);
       stick.style.left = x + 'px';
     }
     else if (y < YMIN) {
-      y -= stickSpeed;    // keeps stick within TOP border of ICE
+      // y -= stickSpeed;    // keeps stick within TOP border of ICE
       // console.log(y);
       stick.style.top = y + 'px';
     } 
     else if (x > 322) {
-      x += stickSpeed;     // keeps stick within CENTER ICE (to the right)
+      // x += stickSpeed;     // keeps stick within CENTER ICE (to the right)
       // console.log(x);
       stick.style.left = x + 'px';
     }
     else if (y > 385) {
-      y += stickSpeed;    // keeps stick within BOTTOM border of ICE
+      // y += stickSpeed;    // keeps stick within BOTTOM border of ICE
       // console.log(y);
       stick.style.top = y + 'px'
     }
     stick.style.left = `${x - 10}px`;
     stick.style.top = `${y - 10}px`;
     stick.style.right = `${x - 10}px`;
-    console.log(stick.style.right);
+    // console.log(stick.style.right);
   }
 
 // FUNCTIONS //
@@ -80,6 +80,7 @@ const movePuckDown = () => {
   }
   puck.style.top = `${y + pxMOVE}px`;
   // console.log(puck.style.left)
+  collisionDetection(stick, puck);
 }
 
 const movePuckUp = () => {
@@ -90,6 +91,7 @@ const movePuckUp = () => {
     downInterval = setInterval(movePuckDown, speed)
   }
   puck.style.top = `${y - pxMOVE}px`;
+  collisionDetection(stick, puck);
 }
 const movePuckLeft = () => {
   clearInterval(rightInterval)
@@ -99,6 +101,7 @@ const movePuckLeft = () => {
     rightInterval = setInterval(movePuckRight, speed);
   }
   puck.style.left = `${x - pxMOVE}px`;
+  collisionDetection(stick, puck);
 }
 
 const movePuckRight = () => {
@@ -109,26 +112,26 @@ const movePuckRight = () => {
     leftInterval = setInterval(movePuckLeft, speed);
   }
   puck.style.left = `${x + pxMOVE}px`;
-// collisionDetection(puckRect);
+collisionDetection(stick, puck);
 }
 
 const puckMotion = () => {
-  let x = puck.getBoundingClientRect().left;
-  let y = puck.getBoundingClientRect().top;
+  // let x = puck.getBoundingClientRect().left;
+  // let y = puck.getBoundingClientRect().top;
 
-  if (x < XMIN) {
-    if (leftInterval) {
-      clearInterval(leftInterval)
-    }
-    rightInterval = setInterval(movePuckRight, speed);
-  }
+  // if (x < XMIN) {
+  //   if (leftInterval) {
+  //     clearInterval(leftInterval)
+  //   }
+  //   rightInterval = setInterval(movePuckRight, speed);
+  // }
 
-  if (y < YMIN) {
-    if (upInterval) {
-      clearInterval(upInterval)
-    }
-    downInterval = setInterval(movePuckDown, speed);
-  }
+  // if (y < YMIN) {
+  //   if (upInterval) {
+  //     clearInterval(upInterval)
+  //   }
+  //   downInterval = setInterval(movePuckDown, speed);
+  // }
 }
 
 
@@ -143,12 +146,15 @@ const puckMotion = () => {
   
   // COLLISION DETECTION //
 function collisionDetection(stick, puck) {
-  if (puck.style.top + puck.style.height >= stick.style.top && stick.style.left + puck.style.width >= stick.style.left && puck.style.right - puck.style.width <= stick.style.right) {
-    return true;
-  }
-  console.log(collisionDetection);
-
-    // return (stick.right) >= puck && (puckLeft.left) >= stick;
+  if (puck.style.left === stick.style.right) {
+    // console.log('s', stick.style.top) 
+    // console.log('p', puck.style.top)
+    // console.log('sR', stick.style.right)
+    // console.log('pL', puck.style.left)
+    console.log('collision')
+    }
+    // if the PUCK LEFT = STICK RIGHT
+// 
 }
 
 // console.log('collisionDetection(stick, puckLeft)', collisionDetection(stickRight, puckLeft))
