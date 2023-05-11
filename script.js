@@ -96,6 +96,14 @@ const puckMotion = () => {
   }
 }
 
+// COLLISION DETECTION //
+
+function checkCollision() {
+  
+}
+
+
+
 const startGame = () => {
   rightInterval = setInterval(movePuckRight, SPEED);
   downInterval = setInterval(movePuckDown, SPEED);
