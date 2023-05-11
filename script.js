@@ -3,12 +3,12 @@
 
 // CONSTANTS //
 
-const SPEED = 5
+const speed = 5
 const XMAX = 638
-const YMAX = 410
+const YMAX = 425
 const XMIN = 17.3
-const YMIN = 30
-const PXMOVE = 1
+const YMIN = 50
+const pxMOVE = 1
 
 // STATE //
 
@@ -104,9 +104,9 @@ const movePuckDown = () => {
   let y = puck.getBoundingClientRect().top;
   if (y > YMAX) {
     clearInterval(downInterval);
-    upInterval = setInterval(movePuckUp, SPEED)
+    upInterval = setInterval(movePuckUp, speed)
   }
-  puck.style.top = `${y + PXMOVE}px`;
+  puck.style.top = `${y + pxMOVE}px`;
 }
 
 const movePuckUp = () => {
@@ -114,18 +114,18 @@ const movePuckUp = () => {
   let y = puck.getBoundingClientRect().top;
   if (y < YMIN) {
     clearInterval(upInterval);
-    downInterval = setInterval(movePuckDown, SPEED)
+    downInterval = setInterval(movePuckDown, speed)
   }
-  puck.style.top = `${y - PXMOVE}px`;
+  puck.style.top = `${y - pxMOVE}px`;
 }
 const movePuckLeft = () => {
   clearInterval(rightInterval)
   let x = puck.getBoundingClientRect().left;
   if (x < XMIN) {
     clearInterval(leftInterval)
-    rightInterval = setInterval(movePuckRight, SPEED);
+    rightInterval = setInterval(movePuckRight, speed);
   }
-  puck.style.left = `${x - PXMOVE}px`;
+  puck.style.left = `${x - pxMOVE}px`;
 }
 
 const movePuckRight = () => {
@@ -133,9 +133,9 @@ const movePuckRight = () => {
   let x = puck.getBoundingClientRect().left;
   if (x > XMAX) {
     clearInterval(rightInterval)
-    leftInterval = setInterval(movePuckLeft, SPEED);
+    leftInterval = setInterval(movePuckLeft, speed);
   }
-  puck.style.left = `${x + PXMOVE}px`;
+  puck.style.left = `${x + pxMOVE}px`;
 }
 
 const puckMotion = () => {
@@ -146,14 +146,14 @@ const puckMotion = () => {
     if (leftInterval) {
       clearInterval(leftInterval)
     }
-    rightInterval = setInterval(movePuckRight, SPEED);
+    rightInterval = setInterval(movePuckRight, speed);
   }
 
   if (y < YMIN) {
     if (upInterval) {
       clearInterval(upInterval)
     }
-    downInterval = setInterval(movePuckDown, SPEED);
+    downInterval = setInterval(movePuckDown, speed);
   }
 }
 
@@ -178,9 +178,9 @@ const boomtown = () => {
   let puckLeft = puck.getBoundingClientRect().left;
   if (puckLeft > stickRight) {
     clearInterval(rightInterval)
-    leftInterval = setInterval(puck, SPEED);
+    leftInterval = setInterval(puck, speed);
   }
-  puck.style.left = `${x + PXMOVE}px`;
+  puck.style.left = `${x + pxMOVE}px`;
 }
 
 
@@ -196,8 +196,8 @@ const boomtown = () => {
 
 
 const startGame = () => {
-  rightInterval = setInterval(movePuckRight, SPEED);
-  downInterval = setInterval(movePuckDown, SPEED);
+  rightInterval = setInterval(movePuckRight, speed);
+  downInterval = setInterval(movePuckDown, speed);
   document.addEventListener("mousemove", moveStick);
 }
 startButton.addEventListener("click", startGame);
