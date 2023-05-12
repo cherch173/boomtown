@@ -1,7 +1,7 @@
 // OK HERE WE GO //
 
 
-// CONSTANTS //
+// **CONSTANTS** //
 
 const speed = 2
 const XMAX = 635
@@ -10,7 +10,7 @@ const XMIN = 17.3
 const YMIN = 60
 const pxMOVE = 1
 
-// STATE //
+// **STATE** //
 
 // Interval //
 let rightInterval
