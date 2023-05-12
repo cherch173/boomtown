@@ -36,7 +36,7 @@ const faceOffButton = document.querySelector("#start");
 const ice = document.querySelector(".ice");
 
 let puckRect = puck.getBoundingClientRect();
-console.log(puckRect)
+// console.log(puckRect)
 
 const playerGoal = document.querySelector(".goal2")
 const compGoal = document.querySelector(".goal")
