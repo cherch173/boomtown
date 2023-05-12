@@ -132,16 +132,16 @@ collisionDetection(stick, puck);
   // COLLISION DETECTION //
 function collisionDetection(stick, puck) {
   if (puck.style.left === stick.style.right) {
-    console.log('collisionRight')
+    // console.log('collisionRight')
   } 
   if (puck.style.right === stick.style.left) {
-    console.log('collisionLeft')
+    // console.log('collisionLeft')
   }
   if (puck.style.bottom === stick.style.top) {
-    console.log('collisionTop')
+    // console.log('collisionTop')
   }
   if (puck.style.top === stick.style.bottom) {
-    console.log('collisionBottom')
+    // console.log('collisionBottom')
   }
 // ...now I know we're supposed to take our console logs out but I left THESE ONES in so you can test what collisions are what in the DOM / DevOps Tools to make sure I'm registering actuall collisions based on the object's rect //
 }
