@@ -140,10 +140,10 @@ To effectively build this we'll be utilizing DIVS and and their GRID COORDNATES 
 - [X] Compose Gameplay using JAVASCRIPT pt1
     - Make the _Puck_, _Stick_ and _Goal_ appear on the ICE
 
-- [ ] Compose **GAMEPLAY** using JAVASCRIPT pt2 (
+- [X] Compose **GAMEPLAY** using JAVASCRIPT pt2 (
     - Make the _Puck_ CHANGE DIRECTION upon COLLISION
-- [ ] Ensure Functionality
-- [ ] Glam up all **AESTHETICS** using CSS
+- [X] Ensure Functionality
+- [X] Glam up all **AESTHETICS** using CSS
 
 ![Image](https://media.tenor.com/ciShAY-mXXkAAAAC/wonderous-letterkenny.gif)
 ***
