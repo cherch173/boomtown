@@ -138,7 +138,7 @@ To effectively build this we'll be utilizing DIVS and and their GRID COORDNATES 
 - [X] Complete **STICK** using HTML & CSS
 - [X] Complete **PUCK** using HTML & CSS
 - [X] Compose Gameplay using JAVASCRIPT pt1
-    - Make the _Puck_, _Stick_ and _Goal_ appear on the ICE
+    - Make the _Puck_, _Stick_ and _Goal_ appear within the borders of the ICE and react to its boundaries
 
 - [X] Compose **GAMEPLAY** using JAVASCRIPT pt2 (
     - Make the _Puck_ CHANGE DIRECTION upon COLLISION
