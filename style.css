@@ -77,6 +77,24 @@ body {
     left: 355px;
   }
 
+  .blueLine {
+    position: absolute;
+    height: 362px;
+    width: 2px;
+    background-color: white;
+    border: 3px double rgba(25, 25, 179, .73);
+    left: 200px;
+  }
+
+  .blueLine2 {
+    position: absolute;
+    height: 362px;
+    width: 2px;
+    background-color: white;
+    border: 3px double rgba(25, 25, 179, .73);
+    left: 500px;
+  }
+
   .goal1 {
     position: absolute;
     width: 25px;

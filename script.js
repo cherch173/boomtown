@@ -159,16 +159,18 @@ const puckMotion = () => {
   // COLLISION DETECTION //
 function collisionDetection(stick, puck) {
   if (puck.style.left === stick.style.right) {
-    // console.log('s', stick.style.top) 
-    // console.log('p', puck.style.top)
-    // console.log('sR', stick.style.right)
-    // console.log('pL', puck.style.left)
-    console.log('collision')
+    console.log('collisionRight')
   } 
   if (puck.style.right === stick.style.left) {
-    console.log('collision')
+    console.log('collisionLeft')
   }
-// 
+  if (puck.style.bottom === stick.style.top) {
+    console.log('collisionTop')
+  }
+  if (puck.style.top === stick.style.bottom) {
+    console.log('collisionBottom')
+  }
+// now I know we're supposed to take our console logs out but I left this in so you can test what collisions are what in the DOM / DevOps Tools to make sure I'm registering actuall collisions based on the object's rect //
 }
 
 // console.log('collisionDetection(stick, puckLeft)', collisionDetection(stickRight, puckLeft))
@@ -177,6 +179,7 @@ function collisionDetection(stick, puck) {
 
 // SCORING //
 
+// ...so what exactly IS a GOAL, Ziig? ///
 function goalScore() {
   if (puck <= compGoal) {
     playerScore += 1;
@@ -192,11 +195,14 @@ function goalScore() {
   }
 }
 
+// ...yaso this is what HAPPENS to the SCORE when a GOAL is SCORED //
 function updateScore() {
   scoreText.textContent = `${playerScore} ; ${compScore}`;
 };
 
 
+
+/// THE INITIALIZATION //
 const startGame = () => {
   rightInterval = setInterval(movePuckRight, speed);
   downInterval = setInterval(movePuckDown, speed);
