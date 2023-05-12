@@ -101,7 +101,7 @@ To PLAY AGAIN simply just click the FACE OFF Button which will reset the game.
 ### **WIREFRAME**
 To effectively build this we'll be utilizing DIVS and and their GRID COORDNATES to create shapes and the assigning them Classes and IDs to assign them different property values.
 
-![Image](https://github.com/cherch173/arcadia/blob/main/wireframe_boomtown.png?raw=true)
+![Image](boomtownWireframe.jpg)
 
 
 ***
