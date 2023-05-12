@@ -61,11 +61,17 @@ We'll use CSS Style Property Manipulation to create the essence of movement and 
 
 To make the stick (player1) I made a div and through combining Event Listeners and MouseMove I allow the user to control their Joystick up until a secret border at Center Ice.
 
-We'll combine Collision Detection and Change Direction functions to emulate a stick directing the puck towards the goal (otherwise known as a _**shot**_).
-
 ![Image](https://media.tenor.com/kD3R5YQkmVgAAAAd/shoresy-sticks.gif)
 
 **Sticks** are _unbelieveable_.
+
+***
+
+#### _**BLOCKS and  SHOTS**_
+
+To stop JJ Frankie JJ from sending the Letterkenny Irish home in defeat we'll combine Collision Detection and Change Direction functions to emulate a stick directing the puck away from the goal aka a **block**.
+
+The same logic used to block can also be mathematically inverted to direct the puck _towards_ the goal with your stick (otherwise known as a _**shot**_).
 
 ***
 
@@ -89,7 +95,7 @@ You play the GOALIE so it's your job to STOP THE PUCK from entering the NET.
 
 The puck will move upon contact and bounce of the parameters of the grid I build out of Divs and simply change the border style and color to emulate boards.
 
-The MVP version will showcase the Puck DIV disappearing if it enters the GOAL DIV.
+The MVP version will showcase the PUCK DIV defending its NET DIV from its PUCK DIV using Collision Detection functions, Change Direction functions and Mouse Move event listeners powered by CSS Style Property Manipulation _and_ getBoundingClientRect().
 
 The 2.0 version of the game will run for a facsimile period elapsing when one player **scores 5 goals**. Aka first to 5 goals = winner, winner chicken dinner...
 
