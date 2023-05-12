@@ -71,7 +71,7 @@ To make the stick (player1) I made a div and through combining Event Listeners a
 
 To stop JJ Frankie JJ from sending the Letterkenny Irish home in defeat we'll combine Collision Detection and Change Direction functions to emulate a stick directing the puck away from the goal aka a **block**.
 
-The same logic used to block can also be mathematically inverted to direct the puck _towards_ the goal with your stick (otherwise known as a _**shot**_).
+The same logic used to block can also be mathematically inverted to direct the puck _towards_ the goal with your stick (otherwise known as a _**shot**_, Ziig).
 
 ***
 
