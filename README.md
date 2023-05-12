@@ -99,7 +99,7 @@ The MVP version will showcase the STICK DIV defending its NET DIV from its PUCK 
 
 The 2.0 version of the game will run for a facsimile period elapsing when one player **scores 5 goals**. Aka first to 5 goals = winner, winner chicken dinner...
 
-To PLAY AGAIN simply just click the FACE OFF Button which will reset the game.
+To PLAY AGAIN simply just enter Command+R which will reset the game.
 
 ***
 ***
