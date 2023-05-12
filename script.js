@@ -46,6 +46,8 @@ const compGoal = document.querySelector(".goal")
 // const compGoalWidth = compGoal.style.width;
 // const compGoalHeight = compGoal.style.height;
 
+const scoreText = document.getElementById('#scoreText')
+
 
 // EVENT LISTENERS //
 
@@ -187,6 +189,10 @@ function goalScore() {
     return;
   }
 }
+
+function updateScore() {
+  scoreText.textContent = `${playerScore} ; ${compScore}`;
+};
 
 
 const startGame = () => {
