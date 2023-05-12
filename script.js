@@ -27,9 +27,6 @@ let stickSpeed
 let playerScore = 0
 let compScore = 0
 
-// Winning //
-let winner
-
 
 // CACHED ELEMENTS //
 
@@ -37,20 +34,17 @@ const stick = document.querySelector(".stick");
 const puck = document.querySelector(".puck");
 const faceOffButton = document.querySelector("#start");
 const ice = document.querySelector(".ice");
-
 // let iceRect = ice.getBoundingClientRect();
 // let stickRect = stick.getBoundingClientRect();
 let puckRect = puck.getBoundingClientRect();
 console.log(puckRect)
 
-const scoreText = document.querySelector('#scoreText');
-
 const playerGoal = document.querySelector(".goal2")
 const compGoal = document.querySelector(".goal")
-const playerGoalWidth = playerGoal.style.width;
-const playerGoalHeight = playerGoal.style.height;
-const compGoalWidth = compGoal.style.width;
-const compGoalHeight = compGoal.style.height;
+// const playerGoalWidth = playerGoal.style.width;
+// const playerGoalHeight = playerGoal.style.height;
+// const compGoalWidth = compGoal.style.width;
+// const compGoalHeight = compGoal.style.height;
 
 
 // EVENT LISTENERS //
@@ -181,27 +175,19 @@ function collisionDetection(stick, puck) {
 
 // SCORING //
 
-function goalScoring () {
-  if (puck.x <= 0) {
-    compScore+=1;
+function goalScore() {
+  if (puck <= 0) {
+    playerScore += 1;
     updateScore();
     return;
   }
-  if (puck.x >= compGoalWidth) {
-    playerScore+=1;
+  if (puck >= playerGoal.style.height) {
+    compScore += 1;
     updateScore();
     return;
   }
 }
 
-function updateScore() {
-  scoreText.textContent = `${playerScore} : ${compScore}`;
-}
-
-function getWinner() {
-  if (scoreText === '1 : 0' || scoreText === '0 : 1')
-  return winner;
-}
 
 const startGame = () => {
   rightInterval = setInterval(movePuckRight, speed);
