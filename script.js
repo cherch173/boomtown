@@ -142,10 +142,6 @@ const puckMotion = () => {
   //   downInterval = setInterval(movePuckDown, speed);
   // }
 }
-
-
-
-  
   
   // COLLISION DETECTION //
 function collisionDetection(stick, puck) {
