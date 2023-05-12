@@ -3,11 +3,11 @@
 
 // CONSTANTS //
 
-const speed = 5
-const XMAX = 638
+const speed = 2
+const XMAX = 635
 const YMAX = 425
 const XMIN = 17.3
-const YMIN = 50
+const YMIN = 42
 const pxMOVE = 1
 
 // STATE //
@@ -43,29 +43,30 @@ console.log(puckRect)
   const moveStick = (event) => {
     let x = event.clientX;
     let y = event.clientY;
-    if (x < XMIN) {     // keeps stick within LEFT border of ICE
-      // x -= stickSpeed;
+    if (x < XMIN) {     
+      // keeps stick within LEFT border of ICE
       // console.log(x);
       stick.style.left = x + 'px';
     }
     else if (y < YMIN) {
-      // y -= stickSpeed;    // keeps stick within TOP border of ICE
+    // keeps stick within TOP border of ICE
       // console.log(y);
       stick.style.top = y + 'px';
     } 
-    else if (x > 322) {
-      // x += stickSpeed;     // keeps stick within CENTER ICE (to the right)
+    else if (x > 600) {
+    // keeps stick within CENTER ICE (to the right)
       // console.log(x);
       stick.style.left = x + 'px';
     }
-    else if (y > 385) {
-      // y += stickSpeed;    // keeps stick within BOTTOM border of ICE
+    else if (y > 333) {
+  // keeps stick within BOTTOM border of ICE
       // console.log(y);
       stick.style.top = y + 'px'
     }
     stick.style.left = `${x - 10}px`;
     stick.style.top = `${y - 10}px`;
-    stick.style.right = `${x - 10}px`;
+    stick.style.right = `${x + 10}px`;
+    stick.style.bottom = `${y + 10}px`;
     // console.log(stick.style.right);
   }
 
@@ -113,8 +114,7 @@ const movePuckRight = () => {
   if (x > XMAX || stick.style.top < x > stick.style.right || stick.style.right < x < stick.style.bottom ||
     stick.style.right === puck.style.left
     // if TOP LEFT portion of PUCK is LESS THAN the BOTTOM RIGHT of STICK and GREATER THAN the TOP RIGHT of the STICK that is a COLLISION
-   
-    // ...OR if the BOTTOM LEFT of the PUCK is GREATER THAN the TOP RIGHT of the STICK **AND** its LESS THAN the STICK that is the CONDITION NEEDED to MOVE RIGHT
+   // ...OR if the BOTTOM LEFT of the PUCK is GREATER THAN the TOP RIGHT of the STICK **AND** its LESS THAN the STICK that is the CONDITION NEEDED to MOVE RIGHT
     
     ) {
     clearInterval(rightInterval)
@@ -144,13 +144,7 @@ const puckMotion = () => {
 }
 
 
-// ALO'S A GENIUS
-// if ((puckRect.top + puckRect.height >= stickRect.top &&
-//   stick.left + puckRect.width >= stickRect.left &&
-//   puckRect.right - puckRect.width <= stickRect.right)) {
-//     clearInterval(rightInterval)
-//     leftInterval = setInterval(movePuckLeft, speed);
-//   }
+
   
   
   // COLLISION DETECTION //
@@ -162,8 +156,9 @@ function collisionDetection(stick, puck) {
     // console.log('pL', puck.style.left)
     console.log('collision')
   } 
-  
-    // if the PUCK LEFT = STICK RIGHT
+  if (puck.style.right === stick.style.left) {
+    console.log('collision')
+  }
 // 
 }
 
@@ -171,7 +166,6 @@ function collisionDetection(stick, puck) {
 // console.log('collisionDetection(ice, puck)', collisionDetection(ice, puck))
 
 // CHANGE DIRECTION after COLLISION v1 //
-
 
 // CHANGE DIRECTION after COLLISION v2 //
 

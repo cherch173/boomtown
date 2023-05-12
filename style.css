@@ -1,7 +1,11 @@
+
+
 body {
+    height: 100vh;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    font-family: 'Russo One', sans-serif;
     background-color: rgb(43, 45, 45);
   }
   
@@ -25,6 +29,7 @@ body {
     border: 1px solid forestgreen;
     top: 225px;
     left: 333px;
+    box-sizing: content-box;
   }
   
   .ice {
@@ -34,7 +39,7 @@ body {
     border: 16px double crimson;
     border-radius: 10%;
     background-color: whitesmoke;
-    margin-bottom: -20px;
+    margin-bottom: -30px;
   }
 
   .goal {
@@ -43,8 +48,8 @@ body {
     height: 200px;
     background-color: grey;
     border: 2px double black;
-    left: 680px;
-    top: 150px;
+    left: 678px;
+    top: 165px;
   }
   .goal2 {
     position: absolute;
@@ -52,8 +57,8 @@ body {
     height: 200px;
     background-color: grey;
     border: 2px double black;
-    left: 5px;
-    top: 150px;
+    left: 7px;
+    top: 166px;
   }
 
   h1 {
@@ -68,10 +73,19 @@ body {
     text-shadow: -1px 1px crimson, -2px 2px black;
     font-size: 20px;
   }
+
+  #faceOffText {
+    color: rgba(220, 20, 60, .86);
+    text-shadow: -1px 1px whitesmoke, -2px 2px black;
+    font-size: 26px;
+  }
   
   #start {
+    display: grid;
+    flex-direction: row;
+  text-align: center;
     background-color: firebrick;
     color: whitesmoke;
-    justify-content: center;
-    width: 10%;
+    border: 1px solid whitesmoke;
+    width: 8%;
   }
