@@ -178,15 +178,15 @@ function collisionDetection(stick, puck) {
 // SCORING //
 
 function goalScore() {
-  if (puck <= 0) {
+  if (puck <= compGoal) {
     playerScore += 1;
-    puck.style.visibility.hidden;
+    puck.style.display = none;
     updateScore();
     return;
   }
-  if (puck >= playerGoal.style.height) {
+  if (puck >= compGoal.style.height) {
     compScore += 1;
-    puck.style.visibility.hidden;
+    puck.style.display = none;
     updateScore();
     return;
   }

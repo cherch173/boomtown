@@ -54,7 +54,7 @@ body {
     border: 1px solid forestgreen;
     top: 220px;
     left: 333px;
-    box-sizing: content-box;
+    /* box-sizing: content-box; */
     overflow: hidden;
     visibility: visible;
   }
@@ -67,6 +67,14 @@ body {
     border-radius: 10%;
     background-color: whitesmoke;
     margin-bottom: -25px;
+  }
+
+  .centerIce {
+    position: absolute;
+    height: 371px;
+    width: 2px;
+    background-color: crimson;
+    left: 355px;
   }
 
   .goal1 {
