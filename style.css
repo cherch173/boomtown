@@ -15,12 +15,23 @@ body {
     display: grid;
     flex-direction: row;
     text-align: center;
+    justify-content: center;
+    align-items: center;
     background-color: firebrick;
     color: whitesmoke;
     border: 1px solid whitesmoke;
-    width: 8%;
-    margin-left: 317px;
+    width: 13%;
+    height: 23px;
+    margin-left: 286px;
     margin-bottom: 10px;
+  }
+
+  #start:hover {
+    background-color: salmon;
+    color: bisque;
+    border: 1px double crimson;
+    transform: scale(1.17);
+    transition: transform 142ms ease-in;
   }
   
   .stick {
@@ -30,7 +41,7 @@ body {
     /* border-radius: 50%; */
     background: dodgerblue;
     border: 2px double navy;
-    top: 210px;
+    top: 200px;
     left: 600px;
   }
   
@@ -41,7 +52,7 @@ body {
     /* border-radius: 50%; */
     background: chartreuse;
     border: 1px solid forestgreen;
-    top: 225px;
+    top: 220px;
     left: 333px;
     box-sizing: content-box;
     overflow: hidden;
@@ -64,7 +75,7 @@ body {
     background-color: grey;
     border: 2px double black;
     left: 678px;
-    top: 165px;
+    top: 150px;
   }
   .goal2 {
     position: absolute;
@@ -73,7 +84,7 @@ body {
     background-color: grey;
     border: 2px double black;
     left: 7px;
-    top: 166px;
+    top: 150px;
   }
 
   h1 {
@@ -102,7 +113,7 @@ body {
     text-shadow: -1px 1px chartreuse -2px 2px black;
     border: 2px solid crimson;
     font-size: 24px;
-    margin-left: 270px;
+    margin-left: 250px;
     margin-bottom: 25px;
     width: 150px;
     background-color: black;

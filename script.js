@@ -5,9 +5,9 @@
 
 const speed = 2
 const XMAX = 635
-const YMAX = 425
+const YMAX = 385
 const XMIN = 17.3
-const YMIN = 70
+const YMIN = 60
 const pxMOVE = 1
 
 // STATE //
@@ -28,7 +28,7 @@ let stickSpeed
 
 const stick = document.querySelector(".stick");
 const puck = document.querySelector(".puck");
-const startButton = document.querySelector("#start");
+const faceOffButton = document.querySelector("#start");
 const ice = document.querySelector(".ice");
 // let contRect = ice.getBoundingClientRect();
 // let stickRect = stick.getBoundingClientRect();
@@ -161,44 +161,9 @@ function collisionDetection(stick, puck) {
 // console.log('collisionDetection(stick, puckLeft)', collisionDetection(stickRight, puckLeft))
 // console.log('collisionDetection(ice, puck)', collisionDetection(ice, puck))
 
-// CHANGE DIRECTION after COLLISION v1 //
-
-// CHANGE DIRECTION after COLLISION v2 //
-
-// const changePuckDirection = (event) => {
-//   let x = event.clientX;
-//   let y = event.clientY;
-//   if (x < XMIN) {     // keeps stick within LEFT border of ICE
-//     x -= stickSpeed;
-//     // console.log(x);
-//     puck.style.left = x + 'px';
-//   }
-//   else if (y < YMIN) {
-//     y -= puckSpeed;    // keeps puck within TOP border of ICE
-//     // console.log(y);
-//     puck.style.top = y + 'px';
-//   } 
-//   else if (x > XMAX) {
-//     x += puckSpeed;     // keeps puck within CENTER ICE (to the right)
-//     // console.log(x);
-//     puck.style.left = x + 'px';
-//   }
-//   else if (y > YMAX) {
-//     y += puckSpeed;    // keeps puck within BOTTOM border of ICE
-//     // console.log(y);
-//     puck.style.top = y + 'px'
-//   }
-//   puck.style.left = `${x - 10}px`;
-//   puck.style.top = `${y - 10}px`;
-//   puck.style.right = `${x - 10}px`;
-//   console.log('puckRight', puck.style.right);
-// }
-
-
-
 const startGame = () => {
   rightInterval = setInterval(movePuckRight, speed);
   downInterval = setInterval(movePuckDown, speed);
   document.addEventListener("mousemove", moveStick);
 }
-startButton.addEventListener("click", startGame);
+faceOffButton.addEventListener("click", startGame);
