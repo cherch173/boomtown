@@ -180,6 +180,7 @@ function collisionDetection(stick, puck) {
 function goalScore() {
   if (puck <= 0) {
     playerScore += 1;
+    puck.style.display.hidden
     updateScore();
     return;
   }
