@@ -34,17 +34,13 @@ const stick = document.querySelector(".stick");
 const puck = document.querySelector(".puck");
 const faceOffButton = document.querySelector("#start");
 const ice = document.querySelector(".ice");
-// let iceRect = ice.getBoundingClientRect();
-// let stickRect = stick.getBoundingClientRect();
+
 let puckRect = puck.getBoundingClientRect();
 console.log(puckRect)
 
 const playerGoal = document.querySelector(".goal2")
 const compGoal = document.querySelector(".goal")
-// const playerGoalWidth = playerGoal.style.width;
-// const playerGoalHeight = playerGoal.style.height;
-// const compGoalWidth = compGoal.style.width;
-// const compGoalHeight = compGoal.style.height;
+
 
 const scoreText = document.getElementById('#scoreText')
 
@@ -58,22 +54,18 @@ const scoreText = document.getElementById('#scoreText')
     let y = event.clientY;
     if (x < XMIN) {     
       // keeps stick within LEFT border of ICE
-      // console.log(x);
       stick.style.left = x + 'px';
     }
     else if (y < YMIN) {
     // keeps stick within TOP border of ICE
-      // console.log(y);
       stick.style.top = y + 'px';
     } 
     else if (x > 600) {
     // keeps stick within CENTER ICE (to the right)
-      // console.log(x);
       stick.style.left = x + 'px';
     }
     else if (y > 333) {
   // keeps stick within BOTTOM border of ICE
-      // console.log(y);
       stick.style.top = y + 'px'
     }
     stick.style.left = `${x - 10}px`;
@@ -95,7 +87,6 @@ const movePuckDown = () => {
     upInterval = setInterval(movePuckUp, speed)
   }
   puck.style.top = `${y + pxMOVE}px`;
-  // console.log(puck.style.left)
   collisionDetection(stick, puck);
 }
 
@@ -130,7 +121,6 @@ const movePuckRight = () => {
     stick.style.right === puck.style.left
     // if TOP LEFT portion of PUCK is LESS THAN the BOTTOM RIGHT of STICK and GREATER THAN the TOP RIGHT of the STICK that is a COLLISION
    // ...OR if the BOTTOM LEFT of the PUCK is GREATER THAN the TOP RIGHT of the STICK **AND** its LESS THAN the STICK that is the CONDITION NEEDED to MOVE RIGHT
-    
     ) {
     clearInterval(rightInterval)
     leftInterval = setInterval(movePuckLeft, speed);
@@ -138,41 +128,22 @@ const movePuckRight = () => {
   puck.style.left = `${x + pxMOVE}px`;
 collisionDetection(stick, puck);
 }
-
-const puckMotion = () => {
-  // let x = puck.getBoundingClientRect().left;
-  // let y = puck.getBoundingClientRect().top;
-
-  // if (x < XMIN) {
-  //   if (leftInterval) {
-  //     clearInterval(leftInterval)
-  //   }
-  //   rightInterval = setInterval(movePuckRight, speed);
-  // }
-
-  // if (y < YMIN) {
-  //   if (upInterval) {
-  //     clearInterval(upInterval)
-  //   }
-  //   downInterval = setInterval(movePuckDown, speed);
-  // }
-}
   
   // COLLISION DETECTION //
 function collisionDetection(stick, puck) {
   if (puck.style.left === stick.style.right) {
-    console.log('collisionRight')
+    // console.log('collisionRight')
   } 
   if (puck.style.right === stick.style.left) {
-    console.log('collisionLeft')
+    // console.log('collisionLeft')
   }
   if (puck.style.bottom === stick.style.top) {
-    console.log('collisionTop')
+    // console.log('collisionTop')
   }
   if (puck.style.top === stick.style.bottom) {
-    console.log('collisionBottom')
+    // console.log('collisionBottom')
   }
-// ...now I know we're supposed to take our console logs out but I left this in so you can test what collisions are what in the DOM / DevOps Tools to make sure I'm registering actuall collisions based on the object's rect //
+// ...now I know we're supposed to take our console logs out but I left THESE ONES in so you can test what collisions are what in the DOM / DevOps Tools to make sure I'm registering actuall collisions based on the object's rect //
 }
 
 
