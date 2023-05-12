@@ -95,7 +95,7 @@ You play the GOALIE so it's your job to STOP THE PUCK from entering the NET.
 
 The puck will move upon contact and bounce of the parameters of the grid I build out of Divs and simply change the border style and color to emulate boards.
 
-The MVP version will showcase the PUCK DIV defending its NET DIV from its PUCK DIV using Collision Detection functions, Change Direction functions and Mouse Move event listeners powered by CSS Style Property Manipulation _and_ getBoundingClientRect().
+The MVP version will showcase the STICK DIV defending its NET DIV from its PUCK DIV using Collision Detection functions, Change Direction functions and Mouse Move event listeners powered by CSS Style Property Manipulation _and_ getBoundingClientRect().
 
 The 2.0 version of the game will run for a facsimile period elapsing when one player **scores 5 goals**. Aka first to 5 goals = winner, winner chicken dinner...
 
