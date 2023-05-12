@@ -28,7 +28,7 @@ let playerScore = 0
 let compScore = 0
 
 
-// CACHED ELEMENTS //
+// **CACHED ELEMENTS** //
 
 const stick = document.querySelector(".stick");
 const puck = document.querySelector(".puck");
@@ -49,7 +49,7 @@ const compGoal = document.querySelector(".goal")
 const scoreText = document.getElementById('#scoreText')
 
 
-// EVENT LISTENERS //
+// **EVENT LISTENERS** //
 
 // JOYSTICK MOTION plus ICE BORDER & CENTER ICE RECOGNITION //
 
@@ -80,10 +80,12 @@ const scoreText = document.getElementById('#scoreText')
     stick.style.top = `${y - 10}px`;
     stick.style.right = `${x + 10}px`;
     stick.style.bottom = `${y + 10}px`;
-    // console.log(stick.style.right);
+
   }
 
-// FUNCTIONS //
+
+
+// **FUNCTIONS** //
 
 const movePuckDown = () => {
   clearInterval(upInterval);
@@ -170,11 +172,9 @@ function collisionDetection(stick, puck) {
   if (puck.style.top === stick.style.bottom) {
     console.log('collisionBottom')
   }
-// now I know we're supposed to take our console logs out but I left this in so you can test what collisions are what in the DOM / DevOps Tools to make sure I'm registering actuall collisions based on the object's rect //
+// ...now I know we're supposed to take our console logs out but I left this in so you can test what collisions are what in the DOM / DevOps Tools to make sure I'm registering actuall collisions based on the object's rect //
 }
 
-// console.log('collisionDetection(stick, puckLeft)', collisionDetection(stickRight, puckLeft))
-// console.log('collisionDetection(ice, puck)', collisionDetection(ice, puck))
 
 
 // SCORING //
