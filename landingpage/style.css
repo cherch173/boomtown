@@ -1,0 +1,26 @@
+* {
+    font-family: 'Russo One', sans-serif;
+    
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: url('https://media.tenor.com/IrfZ5LGhnckAAAAC/letterkenny-boomtown.gif');
+    background-size: cover;
+    background-color: rgb(43, 45, 45);
+  }
+
+  #startBtn {
+    background-color: rgba(0, 0, 0, .73);
+    border: 1px double whitesmoke;
+    color: bisque;
+    font-size: 20px;
+    width: 25%;
+
+  }
