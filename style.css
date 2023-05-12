@@ -1,5 +1,3 @@
-
-
 body {
     height: 100vh;
     box-sizing: border-box;
@@ -7,6 +5,22 @@ body {
     flex-direction: column;
     font-family: 'Russo One', sans-serif;
     background-color: rgb(43, 45, 45);
+  }
+
+  .top {
+    flex-direction: row;
+  }
+
+  #start {
+    display: grid;
+    flex-direction: row;
+    text-align: center;
+    background-color: firebrick;
+    color: whitesmoke;
+    border: 1px solid whitesmoke;
+    width: 8%;
+    margin-left: 317px;
+    margin-bottom: 10px;
   }
   
   .stick {
@@ -30,6 +44,7 @@ body {
     top: 225px;
     left: 333px;
     box-sizing: content-box;
+    overflow: hidden;
   }
   
   .ice {
@@ -39,7 +54,7 @@ body {
     border: 16px double crimson;
     border-radius: 10%;
     background-color: whitesmoke;
-    margin-bottom: -30px;
+    margin-bottom: -25px;
   }
 
   .goal {
@@ -66,12 +81,14 @@ body {
     color: rgba(220, 20, 60, .86);
     text-shadow: -1px 1px whitesmoke, -2px 2px black;
     margin-bottom: -15px;
+    margin-left: 90px;
   }
 
   h2 {
     color: whitesmoke;
     text-shadow: -1px 1px crimson, -2px 2px black;
     font-size: 20px;
+    margin-left: 166px;
   }
 
   #faceOffText {
@@ -79,13 +96,17 @@ body {
     text-shadow: -1px 1px whitesmoke, -2px 2px black;
     font-size: 26px;
   }
-  
-  #start {
-    display: grid;
-    flex-direction: row;
-  text-align: center;
-    background-color: firebrick;
+
+  #scoreText {
     color: whitesmoke;
-    border: 1px solid whitesmoke;
-    width: 8%;
+    text-shadow: -1px 1px chartreuse -2px 2px black;
+    border: 2px solid crimson;
+    font-size: 24px;
+    margin-left: 270px;
+    margin-bottom: 25px;
+    width: 150px;
+    background-color: black;
   }
+
+ 
+  

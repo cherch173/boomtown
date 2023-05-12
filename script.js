@@ -7,7 +7,7 @@ const speed = 2
 const XMAX = 635
 const YMAX = 425
 const XMIN = 17.3
-const YMIN = 42
+const YMIN = 70
 const pxMOVE = 1
 
 // STATE //
