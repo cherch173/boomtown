@@ -16,11 +16,31 @@ body {
     background-color: rgb(43, 45, 45);
   }
 
-  #startBtn {
-    background-color: rgba(0, 0, 0, .73);
-    border: 1px double whitesmoke;
-    color: bisque;
-    font-size: 20px;
-    width: 25%;
+  #box {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    height: 75px;
+    width: 173px;
+    border-radius: 25%;
+    background-color: bisque;
+    border: 6px double firebrick;
+    color: firebrick;
+    text-shadow: -1px 1px whitesmoke, -1.5px 1.5px black;
+    margin-top: 300px;
+  }
 
+  #box:hover {
+    background-color: rgb(250, 128, 114, 0.73);
+    color: whitesmoke;
+  }
+
+  h1 {
+    font-size: 45px;
+    color: rgba(245, 245, 245, .86);
+    text-shadow: -1px 1px rgba(220, 20, 60, .86), -2px 2px black;
+    margin-top: 50px;
+    margin-left: 125px;
   }
